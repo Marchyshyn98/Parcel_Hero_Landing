@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParcelHero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./css/animate.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header__logo">
+            <img src="./img/logo.svg" alt="logo">
+            <p>ParcelHero</p>
+        </div>
+        <div class="header__menu">
+            <div id="header__menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main__card-steps">
+        <ol class="steps-wrap">
+            <li class="step step--current"></li>
+            <li class="step"></li>
+            <li class="step"></li>
+        </ol>
+    </div>
+
+    <section id="main">
+        <div class="card main__card">
+            <div class="card-content main__card-content">
+                <div class="main__img" data-badge="!">
+                    <img src="./img/box.svg" alt="box-icon">
+                </div>
+                <h3 class="main__title">PENDING DELIVERY</h3>
+                <div class="main__info">
+                    <p>You have a pending delivery. Use your unique tracking code to track and receive your item.</p>
+                </div>
+                <hr>
+                <div class="main__trackcode-wrapper">
+                    <dl class="main__trackcode">
+                        <dt>Your tracking code</dt>
+                        <dd>PHR371039221</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="btn-wrapper main__btn-wrapper">
+            <button type="button" class="btn btn__start">Track your item</button>
+        </div>
+    </section>
+
+    <section id="loader">
+        <div class="card loader__card">
+            <ul class="loader__status">
+                <li>Locating your package...</li>
+                <li>Looking for the tracking number...</li>
+                <li>Looking for delivery options...</li>
+            </ul>
+            <div class="spinner">
+                <div class="lds-ripple">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="card info__card">
+            <div class="card-content info__card-content">
+                <div class="img_package info__img">
+                    <img src="./img/package.svg" alt="package">
+                </div>
+                <h3 class="info__title main__title">Package information:</h3>
+                <div class="info__details">
+                    <dl class="info__status">
+                        <dt>Status:</dt>
+                        <dd>Stopped at distribution hub (outstanding customs charge)</dd>
+                    </dl>
+                    <dl class="info__reason">
+                        <dt>Shipping via:</dt>
+                        <dd>Intl tracked courier</dd>
+                    </dl>
+                    <dl class="info__duty">
+                        <dt>Customs fee:</dt>
+                        <dd class="price"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="btn-wrapper info__btn-wrapper">
+            <button type="button" class="btn btn__continue">Schedule delivery now</button>
+        </div>
+    </section>
+
+    <section id="survey">
+        <div class="card">
+            <div class="card-content survey__card-content">
+                <div class="img_package survey__img">
+                    <img src="./img/package.svg" alt="box-icon">
+                </div>
+                <div class="question question--1">
+                    <h2>How would you like to receive your item?</h2>
+                    <div class="question__answers">
+                        <input type="radio" id="question01a" name="question01">
+                        <label for="question01a">
+                            <svg role="img" class="icon icon-truck"><use xlink:href="icons/icons.svg#icon-truck"></use></svg>
+                            <span>I want it delivered</span>
+                        </label>
+                        <input type="radio" id="question01b" name="question01" disabled>
+                        <label for="question01b" data-error="Parcel is already at the depot">
+                            <svg role="img" class="icon icon-store"><use xlink:href="icons/icons.svg#icon-store"></use></svg>
+                            <span>Collection point</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="question question--2">
+                    <h2>Where do you want it to be delivered?</h2>
+                    <div class="question__answers">
+                        <input type="radio" id="question02a" name="question02">
+                        <label for="question02a">
+                            <svg role="img" class="icon icon-home"><use xlink:href="icons/icons.svg#icon-home"></use></svg>
+                            <span>At home</span>
+                        </label>
+                        <input type="radio" id="question02b" name="question02">
+                        <label for="question02b">
+                            <svg role="img" class="icon icon-briefcase"><use xlink:href="icons/icons.svg#icon-briefcase"></use></svg>
+                            <span>At work</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="question question--3 question--last">
+                    <h2>When do you want delivery?</h2>
+                    <div class="question__answers">
+                        <input type="radio" id="question03a" name="question03">
+                        <label for="question03a">
+                            <svg role="img" class="icon icon-calendar"><use xlink:href="icons/icons.svg#icon-calendar"></use></svg>
+                            <span>Weekdays</span>
+                        </label>
+
+                        <input type="radio" id="question03b" name="question03">
+                        <label for="question03b">
+                            <svg role="img" class="icon icon-calendar"><use xlink:href="icons/icons.svg#icon-calendar"></use></svg>
+                            <span>Weekend</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <section id="confirm">
+        <div class="card confirm__card">
+            <div class="card-content confirm__card-content">
+                <div class="img_package confirm__img">
+                    <img src="./img/package.svg" alt="package">
+                </div>
+                <h3 class="confirm__title main__title">DELIVERY CONFIRMATION</h3>
+                <div class="confirm__delivery">
+                    <h4 class="confirm__delivery-title">Expected delivery:</h4>
+                    <div class="confirm__datetime">
+                        <span class="date-delivery"></span>
+                        <span class="time-delivery">Between 8:30 - 18:00</span>
+                    </div>
+                </div>
+                <div class="confirm__info">
+                    <p>*Enter your contact information on the next page and pay the <span class="price"></span> customs duty</p>
+                </div>
+            </div>
+        </div>
+        <div class="btn-wrapper confirm__btn-wrapper">
+            <a href="https://www.google.com" class="btn">Enter Shipping information</a>
+        </div>
+    </section>
+</body>
+
+</html>
